@@ -3,6 +3,8 @@ A group project for year 10: The website and app behind a device to write using 
 
 I wrote the app, and made some modifications to the website (& later reconstructed some of it after it was deleted), while other team members set up the initial website and wrote most of its contents.
 
+Go to ![alex17319.github.io/MarkerbotWebsite](https://alex17319.github.io/MarkerbotWebsite/) to view the website (with the app linked at the top of the page).
+
 To test the app, browse to 'App/\_Handwriting Samples' and copy the contents of one of the .txt files. Paste this into the import/export or import dialogs of either the style input or writing generator page (or paste to the end of the url if the import dialog doesn't work), then on the writing generator page provide some text to be handwritten and click 'generate handwriting'.
 
 To use the app in full, click the mode to select the desired quality, then write out each letter in your desired handwriting, with the grey letters in the background used only to see which letter should be written, rather than as a guide for how to draw it. As you go, drag the sliders to mark each letter's width (though leave some space - half the space you'd expect before the next letter should begin). Once you reach the double-letter combinations, the widths will be marked automatically - make sure your letters fit roughly within the space provided.  
