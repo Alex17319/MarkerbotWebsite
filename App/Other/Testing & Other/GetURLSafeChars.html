@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title>GetURLSafeCharacters</title>
+	</head>
+	<body onload="Main()">
+		<script>
+			Array.prototype.contains = function(obj) {
+				var i = this.length;
+				while (i--) {
+					if (this[i] === obj) {
+						return true;
+					}
+				}
+				return false;
+			}
+			
+			function Main() {
+				var safeOut = document.getElementById("safe");
+				var unsafeOut = document.getElementById("unsafe");
+				var valid = [];
+				var i = 32;
+				var loop = setInterval(function() {
+				//while (true) {
+					if (i > 99159) {
+						clearInterval(loop);
+						//break;
+					}
+					
+					var orig = "#" + String.fromCharCode(i);
+					//var conv = encodeURIComponent(chr);
+					window.location.hash = orig;
+					var tested = window.location.hash;
+					var safe = false;
+					if (orig === tested && !valid.contains(orig)) {
+						safe = true;
+						safeOut.innerHTML += orig.substring(1);
+						valid.push(orig);
+					} else {
+						unsafeOut.innerHTML += orig.substring(1);
+					}
+					console.log(i +", "+ safe +", "+ orig +", "+ tested);
+					
+					i++;
+				//}
+				}, 100);
+			}
+		</script>
+		
+		<div id="safe">Safe:</div>
+		<div style="position:relative;height:1000px"></div>
+		<div id="unsafe">Unsafe:</div>
+		
+	</body>
+</html>

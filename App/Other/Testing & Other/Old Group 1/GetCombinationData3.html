@@ -1,0 +1,33 @@
+<html>
+	<head>
+		
+	</head>
+	<body onload="Main()">
+		<iframe id="iframe" name="iframe" src="GetCombinationDataIframe.html" width="100%" height="100%"></iframe><br />
+		
+		<script>
+			function Main() {
+				console.log("#1");
+				var iframe = document.getElementById("iframe").contentWindow.document.body;
+				//var iframe = window.frames['iframe'].document.body;
+				var everything = iframe.getElementById("everything");
+				var main = everything.getElementById("main");
+				var zipcodes = main.getElementsByClassName("zipcodes")[0];
+				var startsWith_s = zipcodes.getElementsByClassName("startsWith");
+				for (var i = 0; i < startsWith_s.length; i++) {
+					console.log("#2");
+					var defLink_s = startsWith_s[i].getElementsByClassName("defLink");
+					for (var j = 0; j < defLink_s.length; j++) {
+						console.log("#3");
+						var content = defLink_s[j].getElementsByTagName("a")[0].innerHtml;
+						console.log(content);
+					}
+				}
+			}
+		</script>
+		
+		<div id="frameContent">
+			
+		</div>
+	</body>
+</html>

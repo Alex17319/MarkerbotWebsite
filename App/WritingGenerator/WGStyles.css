@@ -1,0 +1,41 @@
+
+#desc1 {
+	padding:2vh;
+	font-size:2vh;
+	line-height:2vh;
+}
+
+
+#textToWriteInput {
+	width: 100%;
+	/* height: calc(100% - 6vh); */
+	height: 50vh;
+	font-family: inherit;
+	resize: vertical;
+}
+
+.button {
+	background-color: #CCC;
+	display: inline-block;
+	padding-top: 1vh;
+	padding-bottom: 1.4vh;
+	padding-left: 2vh;
+	padding-right: 2vh;
+	width: calc(100% - 4vh - 2px);
+	border: 1px solid #AAA;
+	text-align: center;
+	line-height: 4vh;
+	font-size: 3vh;
+}
+.button:hover {
+	background-color: #EEE;
+}
+
+.wordCanvas {
+	/* background-color: #DDD; */
+}
+
+#importButton {
+	cursor: pointer;
+}
+

@@ -1,0 +1,5 @@
+Author:
+	peterolson
+Source:
+	https://www.npmjs.com/package/big-integer
+	http://peterolson.github.io/BigInteger.js/BigInteger.min.js

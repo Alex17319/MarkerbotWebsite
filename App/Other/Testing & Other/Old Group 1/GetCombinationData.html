@@ -1,0 +1,33 @@
+<html>  
+	<head>
+		<title>YQL and RSS: Yahoo Top News Stories</title>
+		<style type='text/css'>    
+			#results {
+				width: 40%;
+				margin-left: 30%;
+				border: 1px solid gray;
+				padding: 5px;
+				height: 200px;
+				overflow: auto;
+			}  
+		</style>  
+		<script type='text/javascript'>  
+			function top_stories(o){  
+				var items = o.query.results.item;  
+				var output = '';  
+				var no_items=items.length;  
+				for (var i = 0; i < no_items; i++) {  
+					var title = items[i].title;  
+					var link = items[i].link;  
+					var desc = items[i].description;  
+					output += "<h3><a href='" + link + "'>" + title + "</a></h3>" + desc + "<hr/>";        
+				}  
+				document.getElementById('results').innerHTML = output;  
+			}  
+		</script>  
+	</head>  
+	<body>  
+		<div id='results'></div>  
+		<script src="https://query.yahooapis.com/v1/public/yql?q=select%20a.content%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.wordfind.com%2Fcontains%2Faa%2F%22%20and%20xpath%3D'%2F%2Fdiv%2Fdiv%2Fdiv%2Ful%2Fli'%20and%20class%3D'defLink'"></script>  
+	</body>  
+</html>

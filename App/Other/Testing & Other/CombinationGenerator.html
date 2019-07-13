@@ -1,0 +1,138 @@
+<html>
+<body onload="OnLoad()">
+<script>
+
+function OnLoad() {
+	
+	//	function shuffle(a) {
+	//		var j, x, i;
+	//	    for (i = a.length; i; i -= 1) {
+	//	        j = Math.floor(Math.random() * i);
+	//	        x = a[i - 1];
+	//	        a[i - 1] = a[j];
+	//	        a[j] = x;
+	//	    }
+	//	}
+	
+	Array.prototype.shuffle = function() {
+		var randomPos, temp, i = this.length;
+	    while (i--) {
+	        randomPos = Math.floor(Math.random() * i);
+	        temp = this[i - 1];
+	        this[i - 1] = this[randomPos];
+	        this[randomPos] = temp;
+	    }
+		return this;
+	}
+	
+	Array.prototype.contains = function(obj) {
+		var i = this.length;
+		while (i--) {
+			if (this[i] === obj) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	
+	//	function shuffle(array) {
+	//		let counter = array.length;
+	//	
+	//		// While there are elements in the array
+	//		while (counter > 0) {
+	//			// Pick a random index
+	//			let index = Math.floor(Math.random() * counter);
+	//	
+	//			// Decrease counter by 1
+	//			counter--;
+	//	
+	//			// And swap the last element with it
+	//			let temp = array[counter];
+	//			array[counter] = array[index];
+	//			array[index] = temp;
+	//		}
+	//	
+	//		return array;
+	//	}
+	
+	
+	//	function shuffle(array) {
+	//		var len = array.length;
+	//		var newArr = [];
+	//		for (i = 0; i < len; i++) {
+	//			pos = Math.floor(Math.random() * len)
+	//			item = array[i]
+	//			newArr.splice(pos, 0, item);
+	//		}
+	//		return newArr;
+	//	}
+	
+	//Get includeExtras and shouldShuffle
+	var input = "";
+	while(!(input === "true" || input === "false")) {
+		input = prompt("Should the extra 'letters' be included? (\"true\"/\"false\")", "true").toLowerCase();
+	}
+	if (input === "true") {input = true; } else {input = false; }
+	const includeExtras = input;
+	input = "";
+	while(!(input === "true" || input === "false")) {
+		input = prompt("Should the results be shuffled? (\"true\"/\"false\")", "true").toLowerCase();
+	}
+	if (input === "true") {input = true; } else {input = false; }
+	const shouldShuffle = input;
+	
+	var mainLetters = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z";
+	var extraLetters = "ff,tt,ll";
+	//var extraCombinations = "ff,mm,mn,nm,tt,ll,ss,zz";
+	//var rareCombinations = "cb,cd,cg,gc,gd,fg,"
+	//var rareCombinations = "bx,bz,cb,cm,cp,cz,gv,gx,gz,kv,kx,kz,"
+	//var invalidCombinations = "ttt,cf,cg,"
+	//var invalidCombinations = "cv,cx,"
+	//var discardedCombinations = "aa,bm,bp,bv,bx,bz,cb,cm,cp,cv,cx,cz,gb,"
+	//var discardedCombinations = "aa,bm,bp,bv,bx,bz,cb,cm,cp,cv,cx,cz,gb,gp,gt,gv,gx,gz,ii,kb,km,kp,kt,kv,kx,kz,lr,lx,lz,pb,pm,pv,px,pz,qa,qb,qe,qi,ql,qm,qo,qp,qr,qqs,qt,qu,qv,qx,qz,rx,rz,sv,sx,sz,tv,tx,tz,ttb,ttm,ttp,tts,ttt,ttu,ttv,ttx,ttz,vb,vl,vm,vp,vr,vs,vt,vx,vz,xb,xl,xm,xr,xs,xv,xx,xz,zb,zm,zp,zr,zs";
+	var discardedCombinations = "aa,bc,bf,bg,bh,bj,bk,bm,bn,bp,bq,btt,bv,bw,bx,bz,bff,btt,bll,cb,cd,cf,cg,cj,cm,cn,cp,cq,ctt,cv,cw,cx,cz,cff,ctt,cll,dc,dj,dk,dp,dq,dt,dtt,dx,dz,dff,dtt,dll,fb,fc,fd,fg,fh,fj,fk,fm,fn,fp,fq,ftt,fv,fw,fx,fz,fff,ftt,fll,gb,gc,gd,gf,gj,gk,gp,gq,gt,gtt,gv,gw,gx,gz,gff,gtt,gll,hc,hd,hf,hg,hh,hj,hk,hp,hq,htt,hv,hx,hz,hff,htt,hll,ij,iw,iy,jb,jc,jd,jf,jg,jh,jj,jk,jl,jm,jn,jp,jq,jr,js,jt,jtt,jv,jw,jx,jy,jz,jff,jtt,jll,kb,kc,kd,kf,kg,kj,kk,km,kp,kq,kt,ktt,kv,kx,kz,kff,ktt,kll,lh,lj,lq,lr,ltt,lw,lx,lz,lff,ltt,lll,mc,md,mf,mg,mh,mj,mk,mq,mr,mt,mtt,mv,mw,mx,mz,mff,mtt,mll,ntt,nx,nff,ntt,nll,oj,pb,pc,pd,pf,pg,pj,pk,pm,pq,ptt,pv,pw,px,pz,pff,ptt,pll,qa,qb,qc,qd,qe,qf,qg,qh,qi,qj,qk,ql,qm,qn,qo,qp,qq,qr,qs,qt,qtt,qv,qw,qx,qy,qz,qff,qtt,qll,rj,rq,rtt,rx,rz,rff,rtt,rll,sd,sg,sj,stt,sv,sx,sz,sff,stt,sll,td,tg,tj,tk,tq,ttt,tv,tx,tff,ttt,tll,ttb,ttc,ttd,ttf,ttg,tth,ttj,ttk,ttm,ttn,ttp,ttq,ttr,tts,ttt,tttt,ttu,ttv,ttw,ttx,tty,ttz,ttff,tttt,ttll,uh,uj,uq,uu,uw,uy,vb,vc,vd,vf,vg,vh,vj,vk,vl,vm,vn,vp,vq,vr,vs,vt,vtt,vv,vw,vx,vy,vz,vff,vtt,vll,wb,wc,wf,wg,wj,wk,wm,wp,wq,wt,wtt,wu,wv,ww,wx,wy,wz,wff,wtt,wll,xb,xd,xf,xg,xh,xj,xk,xl,xm,xn,xq,xr,xs,xtt,xv,xw,xx,xz,xff,xtt,xll,yf,yh,yj,yk,yq,ytt,yu,yv,yx,yy,yz,yff,ytt,zb,zc,zd,zf,zg,zh,zj,zk,zm,zn,zp,zq,zr,zs,zt,ztt,zu,zv,zw,zx,zff,ztt,zll,ffa,ffb,ffc,ffd,fff,ffg,ffh,ffj,ffk,ffm,ffn,ffo,ffp,ffq,ffr,ffs,fft,fftt,ffu,ffv,ffw,ffx,ffy,ffz,ffff,fftt,ffll,ttb,ttc,ttd,ttf,ttg,tth,ttj,ttk,ttm,ttn,ttp,ttq,ttr,tts,ttt,tttt,ttu,ttv,ttw,ttx,tty,ttz,ttff,tttt,ttll,llb,llc,lld,llf,llg,llh,llj,llk,lll,llm,lln,llp,llq,llr,llt,lltt,llv,llw,llx,llz,llff,lltt,llll";
+	//http://www.wordfind.com/contains/
+	
+	var main = mainLetters.split(",");
+	var extras = extraLetters.split(",");
+	
+	var combined;
+	if (includeExtras) {
+		combined = main.concat(extras);
+	} else {
+		combined = main;
+	}
+	
+	var discarded = discardedCombinations.split(",");
+	
+	var combinations = "";
+	
+	for (i = 0; i < combined.length; i++) {
+		for (j = 0; j < combined.length; j++) {
+			comb = combined[i] + combined[j];
+			if (!discarded.contains(comb)) {
+				combinations += comb + " ";
+			}
+		}
+	}
+	
+	
+	var combinationsArr = combinations.split(" ");
+	if (shouldShuffle) {
+		combinationsArr.shuffle();
+	}
+	
+	output = document.getElementById("output"); //yes, global
+	
+	output.innerHTML = combinationsArr.toString().replace(/,/g, " ");
+	output.innerHTML += "<br>" + combinationsArr.length;
+}
+
+</script>
+
+<div id="output">
+	
+</div>
+</body>
+</html>

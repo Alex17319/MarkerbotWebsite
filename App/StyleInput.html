@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project Write</title>
+	
+	<!--?--<meta name="viewport" content="width=device-width, user-scalable=no">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="HandheldFriendly" content="true">
+	
+	<link rel="stylesheet" type="text/css" href="StyleInput/SIStyles.css">
+	<link rel="stylesheet" type="text/css" href="Common/MainStyles.css">
+	<link rel="stylesheet" type="text/css" href="Common/LoadingSpinners/GrowingDotsCircle.css">
+	<link rel="stylesheet" type="text/css" href="Common/share.css">
+	
+	<!--<script src="Common/URLSafeChars.js"></script>-->
+	<script src="Common/Utilities.js"></script>
+	<!--<script src="Common/BaseConverter2.js"></script>-->
+	<script src="Common/Libs/lz-string.min.js"></script>
+	<!--<script src="Common/Libs/base64-string.js"></script>-->
+	<script src="Common/Libs/BigInteger.min.js"></script>
+	<script src="Common/SpecializedElements.js"></script>
+	<script src="Common/CommonFunctions.js"></script>
+	
+	<script src="StyleInput/SIMainScript.js"></script>
+	
+	<style id="globalJSDependantStyles">
+		
+	</style>
+	
+	<script>
+		function ToggleVisibility(elemId) {
+			var elem = document.getElementById(elemId);
+			if (elem.style.visibility === "hidden") {
+				elem.style.visibility = "visible";
+				elem.keepvisibility = true;
+			} else {
+				elem.style.visibility = "hidden";
+				elem.keepvisibility = false;
+			}
+			setTimeout(function(){
+				elem.keepvisibility = false;
+			}, 50);
+		}
+		
+		function HideMenus() {
+			HideMenu('titleBarButtons');
+			
+			function HideMenu(elemId) {
+				elem = document.getElementById(elemId);
+				if (!elem.keepvisibility) {
+					elem.style.visibility = "hidden";
+					elem.keepvisibility = false;
+				}
+			}
+		}
+		
+		function GetParentDirUrl() {
+			return (
+				window.location.protocol
+				+ '//' //Don't know if this works if it encounters eg. "file:///blah" but that shouldn't be relevant
+				+ window.location.host
+				+ '/'
+				+ window.location.pathname.split('/').slice(0,-1).join('/')
+				//slice(0,-1) creates a new array with all but the last element.
+			);
+		}
+	</script>
+</head>
+<body
+	leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0"
+	onclick="HideMenus()"
+	onload="Main();"
+	onDOMContentLoaded="ViewportUpdate()"
+	onresize="ViewportUpdate(true)"
+	onhashchange="location.reload()"
+	>
+	<div id="titleBar">
+		<div class="absolute" style="left:0; margin-left: 1vh;">
+			<a href="../index.html">
+				Markerbot
+			</a>
+		</div>
+		<div id="titleBarMoreButton" class="absolute" onclick="ToggleVisibility('titleBarButtons')" onload="this.addEventListener('touchend', function(e){ e.preventDefault(); ToggleVisibility('titleBarButtons'); })">...</div>
+		<div id="titleBarButtons" class="absolute" style="right:0; visibility:hidden;">
+			<ul class="horizontalList">
+				<li>
+					<div class="inline" id="importExportButton" onclick="OpenImportDialog()">
+						Import/Export
+					</div>
+				</li>
+				<li>
+					<div class="inline">
+						<a href="WritingGenerator.html" onclick="this.href = GetParentDirUrl() + '/WritingGenerator.html' + window.location.hash">
+							Generate Handwriting
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="inline" id="styleQualityToggleButton" onclick="loadingOverlay.style.visibility = 'visible'; ChangeCombosSetting()">
+						Mode: Best Quality
+					</div>
+				</li>
+				<li id="share" style="margin-left:0.2vw">
+					<div class="inline">
+						<ul class="share-buttons">
+							<li class="share-item">
+								<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmarkerbot.ml%2F&t=Marker%20Bot" title="Share on Facebook" target="_blank">
+									<img src="Resources/shareImages/Facebook.svg">
+								</a>
+							</li>
+							<li class="share-item">
+								<a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fmarkerbot.ml%2F&text=Marker%20Bot:%20http%3A%2F%2Fmarkerbot.ml%2F" target="_blank" title="Tweet">
+									<img src="Resources/shareImages/Twitter.svg">
+								</a>
+							</li>
+							<li class="share-item">
+								<a href="https://plus.google.com/share?url=http%3A%2F%2Fmarkerbot.ml%2F" target="_blank" title="Share on Google+">
+									<img src="Resources/shareImages/Google+.svg">
+								</a>
+							</li>
+							<li class="share-item">
+								<a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fmarkerbot.ml%2F&title=Marker%20Bot&summary=An%20intelligent%20device%20that%20writes%20in%20your%20personal%20handwriting%20style%2C%20or%20one%20from%20library%20of%20others%2C%20using%20your%20favourite%20pencil%20or%20pen.&source=http%3A%2F%2Fmarkerbot.ml%2F" target="_blank" title="Share on LinkedIn">
+									<img src="Resources/shareImages/LinkedIn.svg">
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li style="margin-left:0.2vw">
+					<a href="../faq.html">
+					<div class="inline">
+						<img src="Resources/help1.svg" class="titleBarIcon"></img>
+					</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="main" onscroll="ViewportUpdate()">
+		<div id="topPadding" style="height: calc(50vh - 4vh - 25vh); width:100%;">
+			&nbsp;
+		</div>
+		<table id="inputArea">
+			<tbody>
+				<tr id="canvasParent">
+					<!--canvases go here-->
+				</tr>
+			</tbody>
+		</table>
+		<div id="writingLines">
+		</div>
+		<button type="button" onclick="SaveToUrl()">Save To Url</button>
+		
+		<!--<div class="sliderRail">
+			<div class="sliderNode" style="">
+				<div class="letterWidthLine"></div>
+			</div>
+			<div class="sliderNode" style="">
+				<div class="letterWidthLine"></div>
+			</div>
+		</div>-->
+	</div>
+	<div id="importDialogOverlay" style="display:none">
+		<div class="importDialog">
+			<a title="Close" class="importDialogClose" onclick="CloseImportDialog()">Done</a>
+			<p>
+				The current style (if any) is shown below in text form. Copy/paste this text to and from files elsewhere to save/load styles.
+			</p>
+			<textarea id="styleImportArea" style="marginBottom: 2rem"></textarea>
+		</div>
+	</div>
+	<div id="loadingOverlay" style="visibility:visible">
+		<!--<div class="sk-cube-grid">
+			<div class="sk-cube sk-cube1"></div>
+			<div class="sk-cube sk-cube2"></div>
+			<div class="sk-cube sk-cube3"></div>
+			<div class="sk-cube sk-cube4"></div>
+			<div class="sk-cube sk-cube5"></div>
+			<div class="sk-cube sk-cube6"></div>
+			<div class="sk-cube sk-cube7"></div>
+			<div class="sk-cube sk-cube8"></div>
+			<div class="sk-cube sk-cube9"></div>
+		</div>-->
+		<div id="spinnerContainer">
+			<div class="sk-circle" style="width:20vh; height:20vh">
+				<div class="sk-circle1 sk-child"></div>
+				<div class="sk-circle2 sk-child"></div>
+				<div class="sk-circle3 sk-child"></div>
+				<div class="sk-circle4 sk-child"></div>
+				<div class="sk-circle5 sk-child"></div>
+				<div class="sk-circle6 sk-child"></div>
+				<div class="sk-circle7 sk-child"></div>
+				<div class="sk-circle8 sk-child"></div>
+				<div class="sk-circle9 sk-child"></div>
+				<div class="sk-circle10 sk-child"></div>
+				<div class="sk-circle11 sk-child"></div>
+				<div class="sk-circle12 sk-child"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

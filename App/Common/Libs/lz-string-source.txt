@@ -1,0 +1,7 @@
+Author:
+	Sam Hocevar <sam@hocevar.net>
+	--or--
+	Pieroxy
+Source:
+	http://pieroxy.net/blog/pages/lz-string/index.html
+	https://github.com/pieroxy/lz-string

@@ -1,0 +1,25 @@
+<h1>Simple YQL Query</h1> 
+ 
+<div class="exampleIntro"> 
+    <p>In this example, we make a simple YQL Query to retrieve data from the Yahoo! Weather YQL table.</p>            
+</div>
+
+<script>
+	YUI().use('node', 'yql', function(Y) {
+		
+		
+			
+			
+		var res = Y.one('#res'),
+			zip = '21286';
+		Y.log(zip)
+		Y.YQL('select * from weather.forecast where location=' + zip, function(r) {
+			Y.log(r);
+			var el = Y.Node.create('<div class="mod"></div>');
+			
+			el.set('innerHTML', '<h2>Weather for ' + zip + '</h2>' + r.query.results.channel.item.description);
+			
+			res.appendChild(el);
+	
+	});
+</script>

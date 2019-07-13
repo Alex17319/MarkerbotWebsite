@@ -1,0 +1,164 @@
+<html>
+<head>
+	<title>Project Write</title>
+	
+	<!--?--<meta name="viewport" content="width=device-width, user-scalable=no">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="HandheldFriendly" content="true">
+	
+	<link rel="stylesheet" type="text/css" href="WritingGenerator/WGStyles.css">
+	<link rel="stylesheet" type="text/css" href="Common/MainStyles.css">
+	<link rel="stylesheet" type="text/css" href="Common/LoadingSpinners/GrowingDotsCircle.css">
+	<link rel="stylesheet" type="text/css" href="Common/share.css">
+	
+	<!--<script src="Common/URLSafeChars.js"></script>-->
+	<script src="Common/Utilities.js"></script>
+	<!--<script src="Common/BaseConverter2.js"></script>-->
+	<script src="Common/Libs/lz-string.min.js"></script>
+	<!--<script src="Common/Libs/base64-string.js"></script>-->
+	<script src="Common/Libs/BigInteger.min.js"></script>
+	<script src="Common/CommonFunctions.js"></script>
+	
+	<script src="WritingGenerator/WGMainScript.js"></script>
+	
+	<style id="globalJSDependantStyles">
+		
+	</style>
+	
+	<script>
+		function ToggleVisibility(elemId) {
+			var elem = document.getElementById(elemId);
+			if (elem.style.visibility === "hidden") {
+				elem.style.visibility = "visible";
+				elem.keepvisibility = true;
+			} else {
+				elem.style.visibility = "hidden";
+				elem.keepvisibility = false;
+			}
+			setTimeout(function(){
+				elem.keepvisibility = false;
+			}, 50);
+		}
+		
+		function HideMenus() {
+			HideMenu('titleBarButtons');
+			
+			function HideMenu(elemId) {
+				elem = document.getElementById(elemId);
+				if (!elem.keepvisibility) {
+					elem.style.visibility = "hidden";
+					elem.keepvisibility = false;
+				}
+			}
+		}
+		
+		function GetParentDirUrl() {
+			return (
+				window.location.protocol
+				+ '//' //Don't know if this works if it encounters eg. "file:///blah" but that shouldn't be relevant
+				+ window.location.host
+				+ '/'
+				+ window.location.pathname.split('/').slice(0,-1).join('/')
+				//slice(0,-1) creates a new array with all but the last element.
+			);
+		}
+	</script>
+</head>
+<body onclick="HideMenus()" onload="Main();">
+	<div id="titleBar">
+		<div class="absolute" style="left:0; margin-left: 1vh;">
+			<a href="../index.html">
+				Markerbot
+			</a>
+		</div>
+		<div id="titleBarMoreButton" class="absolute" onclick="ToggleVisibility('titleBarButtons')">...</div>
+		<div id="titleBarButtons" class="absolute" style="right:0; visibility:hidden;">
+			<ul class="horizontalList">
+				<li>
+					<div class="inline" id="importButton" onclick="OpenImportDialog()">
+						Import Style
+					</div>
+				</li>
+				<li>
+					<a href="StyleInput.html" onclick="this.href = GetParentDirUrl() + '/StyleInput.html' + window.location.hash">
+						<div class="inline">
+							Edit Style
+						</div>
+					</a>
+				</li>
+				<li style="margin-left:0.2vw">
+					<a href="../faq.html">
+						<div class="inline">
+							<img src="Resources/help1.svg" class="titleBarIcon"></img>
+						</div>
+					</a>
+				</li>
+				<li id="share" style="margin-left:0.2vw">
+					<div class="inline">
+						<ul class="share-buttons">
+							<li class="share-item">
+								<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmarkerbot.ml%2F&t=Marker%20Bot" title="Share on Facebook" target="_blank">
+									<img src="Resources/shareImages/Facebook.svg">
+								</a>
+							</li>
+							<li class="share-item">
+								<a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fmarkerbot.ml%2F&text=Marker%20Bot:%20http%3A%2F%2Fmarkerbot.ml%2F" target="_blank" title="Tweet">
+									<img src="Resources/shareImages/Twitter.svg">
+								</a>
+							</li>
+							<li class="share-item">
+								<a href="https://plus.google.com/share?url=http%3A%2F%2Fmarkerbot.ml%2F" target="_blank" title="Share on Google+">
+									<img src="Resources/shareImages/Google+.svg">
+								</a>
+							</li>
+							<li class="share-item">
+								<a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fmarkerbot.ml%2F&title=Marker%20Bot&summary=An%20intelligent%20device%20that%20writes%20in%20your%20personal%20handwriting%20style%2C%20or%20one%20from%20library%20of%20others%2C%20using%20your%20favourite%20pencil%20or%20pen.&source=http%3A%2F%2Fmarkerbot.ml%2F" target="_blank" title="Share on LinkedIn">
+									<img src="Resources/shareImages/LinkedIn.svg">
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="main">
+		<div id="desc1">
+			Enter the text to be handwritten:
+		</div>
+		<!--<input type="text" id="textToWrite_Input" style="width:100%;height:200px"></input>-->
+		<textarea id="textToWriteInput" style=""></textarea>
+		<div class="button" onclick="GoButtonClick()">Generate Handwriting</div>
+		<div id="outputPreviewContainer">
+			
+		</div>
+	</div>
+	<div id="importDialogOverlay" style="display:none">
+		<div class="importDialog">
+			<a title="Close" class="importDialogClose" onclick="CloseImportDialog()">Done</a>
+			<p>
+				The current style (if any) is shown below in text form. Copy/paste this text to and from files elsewhere to save/load styles.
+			</p>
+			<textarea id="styleImportArea" style="marginBottom: 2rem"></textarea>
+		</div>
+	</div>
+	<div id="loadingOverlay" style="visibility:hidden">
+		<div id="spinnerContainer">
+			<div class="sk-circle" style="width:20vh; height:20vh">
+				<div class="sk-circle1 sk-child"></div>
+				<div class="sk-circle2 sk-child"></div>
+				<div class="sk-circle3 sk-child"></div>
+				<div class="sk-circle4 sk-child"></div>
+				<div class="sk-circle5 sk-child"></div>
+				<div class="sk-circle6 sk-child"></div>
+				<div class="sk-circle7 sk-child"></div>
+				<div class="sk-circle8 sk-child"></div>
+				<div class="sk-circle9 sk-child"></div>
+				<div class="sk-circle10 sk-child"></div>
+				<div class="sk-circle11 sk-child"></div>
+				<div class="sk-circle12 sk-child"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
