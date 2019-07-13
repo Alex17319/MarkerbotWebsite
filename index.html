@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Marker Bot</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+	<link rel="stylesheet" href="css/share.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top">
+	
+	<!-- original from the recovered incomplete version -->
+	<!--<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<!-#- Brand and toggle get grouped for better mobile display -#->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="fa fa-bars"></span>
+					<!-#-<span class="icon-bar">A</span>
+					<span class="icon-bar">B</span>
+					<span class="icon-bar">C</span>-#->
+				</button>
+				<a class="navbar-brand page-scroll" href="#page-top">Marker Bot</a>
+			</div>
+	
+			<!-#- Collect the nav links, forms, and other content for toggling -#->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a class="page-scroll" href="index.html" style="color:#f05f40">Home</a>
+					</li>
+					<li>
+						<a class="page-scroll" href="shop.html">Shop</a>
+					</li>
+					<li>
+						<a class="page-scroll" href="aboutus.html">About Us</a>
+					</li>
+					<li>
+						<a class="page-scroll" href="faq.html">FAQ</a>
+					</li>
+					<li>
+						<a class="page-scroll" href="support.html">Support</a>
+					</li>
+					<li>
+						<a class="page-scroll" href="App/StyleInput.html">Your Marker Bot</a>
+					</li>
+					<li id="share" style="padding-left:1vw; padding-right:1vw">
+						<div class="inline">
+							<ul class="share-buttons">
+								<li class="share-item">
+									<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmarkerbot.ml%2F&t=Marker%20Bot" title="Share on Facebook" target="_blank">
+										<img src="Resources/shareImages/Facebook.svg">
+									</a>
+								</li>
+								<li class="share-item">
+									<a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fmarkerbot.ml%2F&text=Marker%20Bot:%20http%3A%2F%2Fmarkerbot.ml%2F" target="_blank" title="Tweet">
+										<img src="Resources/shareImages/Twitter.svg">
+									</a>
+								</li>
+								<li class="share-item">
+									<a href="https://plus.google.com/share?url=http%3A%2F%2Fmarkerbot.ml%2F" target="_blank" title="Share on Google+">
+										<img src="Resources/shareImages/Google+.svg">
+									</a>
+								</li>
+								<li class="share-item">
+									<a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fmarkerbot.ml%2F&title=Marker%20Bot&summary=An%20intelligent%20device%20that%20writes%20in%20your%20personal%20handwriting%20style%2C%20or%20one%20from%20library%20of%20others%2C%20using%20your%20favourite%20pencil%20or%20pen.&source=http%3A%2F%2Fmarkerbot.ml%2F" target="_blank" title="Share on LinkedIn">
+										<img src="Resources/shareImages/LinkedIn.svg">
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-#- /.navbar-collapse -#->
+		</div>
+		<!-#- /.container-fluid -#->
+	</nav>
+	-->
+	
+	<!-- remade from bootstrap template -->
+	<!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+		<div class="container">
+			<a class="navbar-brand js-scroll-trigger" href="index.html">Marker Bot</a>
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="App/StyleInput.html">App</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="shop.html">Shop</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="aboutus.html">About Us</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="faq.html">FAQ</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="support.html">Support</a>
+					</li>
+					<li class="nav-item"id="share" style="padding-left:1vw; padding-right:1vw">
+						<div class="inline">
+							<ul class="share-buttons">
+								<li class="share-item">
+									<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmarkerbot.ml%2F&t=Marker%20Bot" title="Share on Facebook" target="_blank">
+										<img src="Resources/shareImages/Facebook.svg">
+									</a>
+								</li>
+								<li class="share-item">
+									<a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fmarkerbot.ml%2F&text=Marker%20Bot:%20http%3A%2F%2Fmarkerbot.ml%2F" target="_blank" title="Tweet">
+										<img src="Resources/shareImages/Twitter.svg">
+									</a>
+								</li>
+								<li class="share-item">
+									<a href="https://plus.google.com/share?url=http%3A%2F%2Fmarkerbot.ml%2F" target="_blank" title="Share on Google+">
+										<img src="Resources/shareImages/Google+.svg">
+									</a>
+								</li>
+								<li class="share-item">
+									<a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fmarkerbot.ml%2F&title=Marker%20Bot&summary=An%20intelligent%20device%20that%20writes%20in%20your%20personal%20handwriting%20style%2C%20or%20one%20from%20library%20of%20others%2C%20using%20your%20favourite%20pencil%20or%20pen.&source=http%3A%2F%2Fmarkerbot.ml%2F" target="_blank" title="Share on LinkedIn">
+										<img src="Resources/shareImages/LinkedIn.svg">
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+    </nav>
+	
+	<!-- original from the recovered incomplete version -->
+	<!--<header>
+		<div class="header-content">
+			<div class="header-content-inner">
+				<h1>Marker Bot</h1>
+				<hr>
+				<p>An intelligent device that writes in your personal handwriting style, or one from library of others, using your favourite pencil or pen.</p>
+				<a href="#about" class="btn btn-primary btn-xl page-scroll">Make your mark</a>
+			</div>
+		</div>
+	</header>-->
+	
+	<!-- remade from bootstrap template -->
+	<header class="masthead text-center text-white d-flex">
+		<div class="container my-auto">
+			<div class="row">
+				<div class="col-lg-10 mx-auto">
+					<h1 class="text-uppercase">
+						<strong>Marker Bot</strong>
+					</h1>
+					<hr>
+				</div>
+				<div class="col-lg-8 mx-auto">
+					<p class="text-faded mb-5">An intelligent device that writes in your personal handwriting style, or one from library of others, using your favourite pencil or pen.</p>
+					<a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Make your mark</a>
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	<!-- original from the recovered incomplete version -->
+	<!--<section class="bg-primary" id="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 text-center">
+					<h2 class="section-heading">We've got what you need!</h2>
+					<hr class="light">
+					<p class="text-faded">
+						Have you ever needed to write out a poster in pencil, but your handwriting is sloppy?<br>
+						Do your relatives prefer hand writtten letters, but you don't have the time to write them?
+						Left your hand written essay till the last night? Unable to write due to an injury or disability?<br>
+						We have a solution for you.
+						<br>
+						<br>
+						<!-#-<br><br>
+						MarkerBot is the world’s first writing device that can mimic your handwriting.<br>
+						Edit letters, assignments, posters and essays, all on a computer, then use MarkerBot to write them in your own handwriting, all without holding a pencil. <br>
+						Handwriting documents can be a pain. It’s time consuming, mistakes are difficult to correct, 
+						and the end result can often be smudged and generally messy. MarkerBot solves this, by giving 
+						you the speed, editing ability, and neatness of documents on a computer. After you teach it your handwriting,
+						you can give it any text document to write out automatically.-#->
+					</p>
+					<a href="shop.html" class="btn btn-default btn-xl">Shop now!</a>
+				</div>
+			</div>
+		</div>
+	</section>-->
+	
+	<!-- remade from bootstrap template -->
+	<section class="bg-primary" id="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 mx-auto">
+					<iframe width="854" height="480" style="max-width:100%" src="https://www.youtube.com/embed/fTm_1UEmyK0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
+				<!--<div class="col-lg-8 mx-auto">
+					<video width="100%" controls>
+						<source src="Resources/Pitch/pitchvideo.mp4" type="video/mp4">
+						<!-#-<source src="Resources/Pitch/pitchvideo.ogg" type="video/ogg">-#->
+						<track kind="subtitles" srclang="en" label="English" default src="Resources/Pitch/pitchvideo.vtt"> <!-#- will only work when this is hosted on a server -#->
+						Your browser does not support the video tag.
+					</video>
+				</div>-->
+				<div class="col-lg-8 mx-auto text-center">
+					<br>
+					<h2 class="section-heading text-white">We've got what you need!</h2>
+					<hr class="light my-4">
+					<p class="text-faded mb-4">
+					Have you ever needed to write out a poster in pencil, but your handwriting is sloppy?<br>
+					Do your relatives prefer hand written letters, but you don't have the time to write them?
+					Left your hand written essay till the last night? Unable to write due to an injury or disability?<br>
+					We have a solution for you.
+					<br><br>
+					<!-- Move to Shop page -->
+					<!--MarkerBot is the world’s first writing device that can mimic your handwriting.<br>
+					Edit letters, assignments, posters and essays, all on a computer, then use MarkerBot to write them in your own handwriting, all without holding a pencil.
+					<br><br>
+					Handwriting documents can be a pain. It’s time consuming, mistakes are difficult to correct, 
+					and the end result can often be smudged and generally messy. MarkerBot solves this, by giving 
+					you the speed, editing ability, and neatness of documents on a computer. After you teach it your handwriting,
+					you can give it any text document to write out automatically.-->
+					</p>
+					<a href="shop.html" class="btn btn-light btn-xl">Shop Now!</a>
+				</div>
+			</div>
+		</div>
+    </section>
+	
+	<!-- original from the recovered incomplete version -->
+	<!--<section id="services">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h2 class="section-heading">At Your Service</h2>
+					<hr class="primary">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="service-box">
+						<i class="fa fa-4x fa-paint-brush wow bounceIn text-primary"></i>
+						<h3>Custom Colours</h3>
+						<p class="text-muted">Personalise your Marker Bot with your own colour</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="service-box">
+						<i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
+						<h3>Ready to Ship</h3>
+						<p class="text-muted">We assemble most parts for you, leaving it compact and ready to ship</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="service-box">
+						<i class="fa fa-4x fa-bullseye wow bounceIn text-primary" data-wow-delay=".2s"></i>
+						<h3>Accurate</h3>
+						<p class="text-muted">By using accurate stepper motors, writing is precise</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="service-box">
+						<i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
+						<h3>Made with Love</h3>
+						<p class="text-muted">All Marker Bots are laser cut and hand assembled</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>-->
+	
+	<!-- remade from bootstrap template -->
+	<section id="services">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h2 class="section-heading">At Your Service</h2>
+					<hr class="my-4">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="service-box mt-5 mx-auto">
+						<i class="fa fa-4x fa-paint-brush text-primary mb-3 sr-icons"></i>
+						<h3 class="mb-3">Custom Colours</h3>
+						<p class="text-muted mb-0">Personalise your Marker Bot with your own colour</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="service-box mt-5 mx-auto">
+						<i class="fa fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i>
+						<h3 class="mb-3">Ready to Ship</h3>
+						<p class="text-muted mb-0">We assemble most parts for you, leaving it compact and ready to ship</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="service-box mt-5 mx-auto">
+						<i class="fa fa-4x fa-bullseye text-primary mb-3 sr-icons"></i>
+						<h3 class="mb-3">Accurate</h3>
+						<p class="text-muted mb-0">By using accurate stepper motors, writing is precise</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="service-box mt-5 mx-auto">
+						<i class="fa fa-4x fa-heart text-primary mb-3 sr-icons"></i>
+						<h3 class="mb-3">Made with Love</h3>
+						<p class="text-muted mb-0">All Marker Bots are laser cut and hand assembled</p>
+					</div>
+				</div>
+			</div>
+		</div>
+    </section>
+	
+	<!-- original from the recovered incomplete version -->
+	<!--<section class="no-padding" id="products">
+		<div class="container-fluid">
+			<div class="row no-gutter">
+				<div class="col-lg-4 col-sm-6">
+					<a href="shop.html" class="portfolio-box">
+						<img src="img/portfolio/1.jpg" class="img-responsive" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									Products
+								</div>
+								<div class="project-name">
+									View our Shop
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<a href="App/StyleInput.html" class="portfolio-box">
+						<img src="img/portfolio/2.jpg" class="img-responsive" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									Your Marker Bot
+								</div>
+								<div class="project-name">
+									Get Started
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<a href="aboutus.html" class="portfolio-box">
+						<img src="img/portfolio/3.jpg" class="img-responsive" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									About Us
+								</div>
+								<div class="project-name">
+									Read more about our story
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<a href="https://www.kickstarter.com/projects/1234766576/365334681?token=2a7ad972" class="portfolio-box">
+						<img src="img/portfolio/4.jpg" class="img-responsive" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									Kickstarter
+								</div>
+								<div class="project-name">
+									Support us on Kickstarter
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<a href="faq.html" class="portfolio-box">
+						<img src="img/portfolio/5.jpg" class="img-responsive" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									FAQ
+								</div>
+								<div class="project-name">
+									Have a question?
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<a href="support.html" class="portfolio-box"> 
+						<img src="img/portfolio/6.jpg" class="img-responsive" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									Support
+								</div>
+								<div class="project-name">
+									Have a problem? We're happy to help
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>-->
+	
+	<!-- remade from bootstrap template -->
+	<section class="p-0" id="portfolio">
+		<div class="container-fluid p-0">
+			<div class="row no-gutters /*popup-gallery*/">
+				<div class="col-lg-4 col-sm-6">
+					<a class="portfolio-box" href="shop.html">
+						<img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									Products
+								</div>
+								<div class="project-name">
+									View our Shop
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<a class="portfolio-box" href="App/StyleInput.html">
+						<img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									Your Marker Bot
+								</div>
+								<div class="project-name">
+									Get Started
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<a class="portfolio-box" href="aboutus.html">
+						<img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									About Us
+								</div>
+								<div class="project-name">
+									Read more about our story
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<a class="portfolio-box" href="https://www.kickstarter.com/projects/1234766576/365334681?token=2a7ad972">
+						<img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									Kickstarter
+								</div>
+								<div class="project-name">
+									Support us on Kickstarter
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<a class="portfolio-box" href="faq.html">
+						<img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									FAQ
+								</div>
+								<div class="project-name">
+									Have a question?
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<a class="portfolio-box" href="support.html">
+						<img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									Support
+								</div>
+								<div class="project-name">
+									Have a problem? We're happy to help
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+    </section>
+	
+	<!-- original from the recovered incomplete version -->
+	<!--
+	<section id="contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 text-center">
+					<h2 class="section-heading">Want to know more?</h2>
+					<hr class="primary">
+					<p></p>
+				</div>
+				<div class="col-lg-4 col-lg-offset-2 text-center">
+					<i class="fa fa-phone fa-3x wow bounceIn"></i>
+					<p>06 2753 7268</p>
+				</div>
+				<div class="col-lg-4 text-center">
+					<i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+					<p><a href="mailto:contact@markerbot.ml">contact@markerbot.ml</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+	-->
+	
+	<!-- remade from bootstrap template -->
+	<section id="contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 mx-auto text-center">
+					<h2 class="section-heading">Want to know more?</h2>
+					<hr class="my-4">
+					<!--<p class="mb-5"></p>-->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 ml-auto text-center">
+					<i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+					<p>06 2753 7268</p>
+				</div>
+				<div class="col-lg-4 mr-auto text-center">
+					<i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+					<p>
+						<a href="mailto:contact@markerbot.ml">contact@markerbot.ml</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+	
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+	
+	<!-- Plugin JavaScript -->
+	<script src="js/jquery.easing.min.js"></script>
+	<script src="js/jquery.fittext.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/scrollreveal.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	
+	<!-- Custom Theme JavaScript -->
+	<script src="js/creative.js"></script>
+	
+</body>
+
+</html>
