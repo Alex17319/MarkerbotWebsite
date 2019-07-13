@@ -3,7 +3,7 @@ A group project for year 10: The website and app behind a device to write using 
 
 I wrote the app, and made some modifications to the website (& later reconstructed some of it after it was deleted), while other team members set up the initial website and wrote most of its contents.
 
-Go to ![alex17319.github.io/MarkerbotWebsite](https://alex17319.github.io/MarkerbotWebsite/) to view the website (with the app linked at the top of the page).
+Go to [alex17319.github.io/MarkerbotWebsite](https://alex17319.github.io/MarkerbotWebsite/) to view the website (with the app linked at the top of the page).
 
 To test the app, browse to 'App/\_Handwriting Samples' and copy the contents of one of the .txt files. Paste this into the import/export or import dialogs of either the style input or writing generator page (or paste to the end of the url if the import dialog doesn't work), then on the writing generator page provide some text to be handwritten and click 'generate handwriting'.
 
