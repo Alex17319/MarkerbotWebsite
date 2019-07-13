@@ -9,3 +9,5 @@ To use the app in full, click the mode to select the desired quality, then write
 As you go, feel free to click 'save to url' to save your progress, and then save the links or use the import/export dialog to save the data elsewhere (currently there's no way to erase letters, so taking backups may be valuable if you make mistakes). Once you're done, click 'save to url' and then 'generate handwriting' to switch to the writing generator page.
 
 On the writing generator page, if no style is already imported (ie. the url just ends in 'WritingGenerator.html' rather than being followed by a bunch of other contents) import a style through the import box. Then type/paste some text to be handwritten, and click 'Generate Handwriting'. There are currently a number of bugs with the generation (and other parts of the app), and as this is no longer really an ongoing project I'm unlikely to fix them, but it's a workable demonstration.
+
+Tested in Chrome 58.0.3029.81, known problem with import/export in Edge 42.17134.1.0 (copy/paste the url instead).
