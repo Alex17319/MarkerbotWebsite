@@ -1,0 +1,41 @@
+.productComparison {
+	/* border: 3px solid rgba(220,220,220,0.7); */
+	/* box-shadow: 0 0 0 4px rgba(50, 50, 50, 1);*/
+}
+
+.productComparison > thead * {
+	font-size: 20px;
+	border-top: 3px solid #FFF;
+	border-bottom: 3px solid #FFF;
+}
+.productComparison > thead > tr > td:nth-child(1) {
+	border-right: 2px solid #FFF;
+}
+
+.productComparison > tbody * {
+	font-size: 15px;
+	background-color: rgba(255,255,255,0.1);
+}
+
+.productComparison > tbody > tr > td:nth-child(odd) {
+	background-color: rgba(255,255,255,0.2);
+}
+
+.productComparison > tbody > tr > td:nth-child(1) {
+	font-weight: bold;
+	background-color: rgba(255,255,255,0.3);
+	border-right: 2px solid #FFF;
+}
+.productComparison > thead > tr > td {
+	font-weight: bold;
+	background-color: rgba(255,255,255,0.4);
+}
+
+.productComparison > tbody {
+	border-bottom: 3px solid #FFF;
+}
+
+.productComparison td {
+	padding: 12px;
+	line-height: 25px;
+}
