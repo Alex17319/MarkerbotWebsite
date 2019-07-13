@@ -1,8 +1,0 @@
-Author:
-	cflynn07
-	--or--
-	Casey Flynn
-Source:
-	https://www.npmjs.com/package/power-radix
-	https://github.com/cflynn07/power-radix/blob/master/test/index.spec.js
-	http://stackoverflow.com/a/29355533/4149474
